@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="script.js" type="text/javascript" defer></script>
     <title>Pokemon Web - Diego Chilet</title>
 </head>
 <body>
-    <main>
-        <h1>Pokemon Web</h1>
-        <img src="images/fondoPokeWebDef.png">
-        <div>
-            <div id="infoBox">
-            </div>
-            <input type="text" autocomplete="off" tabindex="0" aria-label="Nombre" value="" dir="ltr" data-initial-value="FJ" autofocus="" id="searchInput" placeholder="Escribe el nombre del pokemon">
-            <button id="apiButton">Buscas pokemon</button>
+    <form action="" onsubmit="searchPokemon(event)">
+        <input type="text" name="pokemon" autocomplete="off">
+    </form>
+    <div data-poke-card class="poke-card">
+        <div data-poke-name>Pokedex</div>
+        <div data-poke-img-container class="img-container">
+            <img data-poke-img class="poke-img" src="images/poke-shadow.png"/>
         </div>
-    </main>
-    <script src="script.js"></script>
+        <div data-poke-id></div>
+        <div data-poke-types class="poke-types"></div>
+        <div data-poke-stats class="poke-stats"></div>
+    </div>
 </body>
 </html>
