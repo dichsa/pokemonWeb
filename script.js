@@ -56,5 +56,20 @@ const searchPokemon = event => {
 }
 
 const renderPokemonData = data => {
-  const sprite = data.sprites.front_default;/*
+  const sprite = data.sprites.front_default;
+  const { stats, types } = data;
+
+  pokeName.textContent = data.name;
+  pokeImg.setAttribute('src', sprite);
+  pokeId.textContent = `Nº ${data.id}`;
+  setCardColor(types);
+  renderPokemonTypes(types);
+  renderPokemonStats(stats);
+}
+
+const setCardColor = types => {
+  const colorOne = typeColors[types[0].type.name];
+  const colorTwo = types[1] ? typeColors[types[1].type.name] : typeColors.default;
+  pokeImg.style.background =  `radial-gradient(${colorTwo} 33%, ${colorOne} 33%)`;
+  pokeImg.style.backgroundSize = ' 5px 5px';
 }
