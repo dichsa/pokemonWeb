@@ -33,7 +33,7 @@ const searchPokemon = event => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
         .then(data => data.json())
         .then(response => renderPokemonData(response))
-        .catch(err => renderNotFound())
+        .catch(err => renderNotFound(err))
 }
 
 const renderPokemonData = data => {
